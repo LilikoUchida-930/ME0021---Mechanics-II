@@ -6,4 +6,6 @@ My mechanism was #145. This mathematical model shows the linear velocity of poin
 
 "Math Model.pdf" -- Calculations and FBD of the mechanism
 
-"Mathematical Model" -- Python code for generating plots of B velocities. s
+"Mathematical Model" -- Python code for generating plots of B velocities. 
+
+"B velocity plot" -- resulting plot when sample code with sample phi function is run. 
