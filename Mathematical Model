@@ -1,0 +1,64 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Mar 30 09:22:09 2021
+
+@author: lilikouchida
+
+ME0021: Mechanics II
+MECHANISMS MODELS PHASE 2A: MATHEMATICAL MODEL
+"""
+
+#*********************************************************v******************
+
+#Importing libraries:
+
+import matplotlib.pyplot as plt
+import math 
+from scipy.misc import derivative 
+#Defining fixed values: 
+
+r = 3  
+L = 5
+
+#Creating empty arrays for time, and the velocity at B in both i and j components.
+#Defining a phi function which may be anything the user decides: 
+
+time_array = []
+velocity_Bj_array = [] 
+velocity_Bi_array = []
+
+ 
+
+#****************************************************************************
+
+for i in range (0,61): 
+    time_array.append(i)
+    def phi(t):
+        return 0.01*t**2 #returns the phi function which can be any user input. 
+    deriv = derivative(phi,i)
+    print (deriv)
+    t = i 
+    phi_function = 0.01*t**2
+    r_sin_phi = r*math.sin(phi_function) 
+    r_cos_phi = r*math.cos(phi_function) 
+    sqrt_second_term = (((r**2)/(L**2))*(math.sin(phi_function))**2)
+    sqrt = math.sqrt(1-sqrt_second_term)
+    a = (L**2)-(r**2) 
+    second_sqrt = math.sqrt((L**2)-(r**2)*(math.sin(phi_function)))
+    velocity_Bi = (-deriv*(r_sin_phi)*(1+(r_cos_phi)/sqrt))
+    velocity_Bi_array.append(velocity_Bi)
+    velocity_Bj = (deriv*(r_cos_phi)*(1+(1/sqrt)*(deriv*(a))))
+    velocity_Bj_array.append(velocity_Bj)
+#     print(time_array)
+#     print(velocity_Bj_array)
+#     print(velocity_Bi_array)
+#     
+#     
+plt.plot(time_array, velocity_Bj_array)
+plt.show()
+plt.plot(time_array, velocity_Bi_array)
+plt.show()
+# 
+# =============================================================================
+     
