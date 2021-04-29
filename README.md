@@ -1,4 +1,4 @@
-# ME0021---Mechanics-II
+# ME0021---Mechanics-II Mechanisms Model Project
 
 This repository includes Python code for the ME0021 Mechanisms Models project phase 2A: Mathematical models. 
 
